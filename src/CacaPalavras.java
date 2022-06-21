@@ -95,7 +95,7 @@ public class CacaPalavras {
         return false;
     }
 
-    private boolean pesquisaPalavra(String palavra, char[][] mapa) {
+    private String pesquisaPalavra(String palavra, char[][] mapa) {
         for (int linha = 0; linha < mapa.length; linha++) {
             for (int coluna = 0; coluna < mapa[0].length; coluna++) {
                 if (palavra.charAt(0) == mapa[linha][coluna]) {
@@ -104,15 +104,15 @@ public class CacaPalavras {
                         pesquisaPalavraEmUmaDirecao(palavra, mapa, linha, coluna, "direita") ||
                         pesquisaPalavraEmUmaDirecao(palavra, mapa, linha, coluna, "baixo") ||
                         pesquisaPalavraEmUmaDirecao(palavra, mapa, linha, coluna, "esquerda")) {
-                        return true;
+                        return '[' + linha + "," + coluna + "]";
                     } else {
-                        return false;
+                        return "";
                     }
 
                 }
             }
         }
-        return false;
+        return "";
     }
 
     public void palavrasImprimir(String[][] palavras) {
