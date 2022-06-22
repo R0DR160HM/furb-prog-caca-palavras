@@ -1,7 +1,5 @@
 import java.util.Scanner;
 
-import javax.print.DocFlavor.STRING;
-
 public class CacaPalavras {
 
     CacaPalavras() {
@@ -34,7 +32,7 @@ public class CacaPalavras {
                     mapaImprimir(mapa);
                     break;
                 case 3:
-                    palavrasResposta(palavras, mapa);
+                    palavrasResposta(palavras);
                     break;
                 case 4:
                     return;
@@ -75,7 +73,7 @@ public class CacaPalavras {
             for (int linha = 0; linha < mapa.length; linha++) {
                 for (int coluna = 0; coluna < mapa[0].length; coluna++) {
 
-                        if (palavra.startsWith("" + mapa[linha][coluna])) {
+                        if (palavra.charAt(0) == mapa[linha][coluna]) {
                             for (int marcador = 0; marcador < palavra.length(); marcador++) {
                                 int movimento = coluna - marcador;
                                 if (movimento < 0) {
@@ -148,8 +146,7 @@ public class CacaPalavras {
         }
     }
 
-    public void palavrasResposta(String[][] palavras, char[][] mapa) {
-        palavras = mapaPesquisa(palavras, mapa);
+    public void palavrasResposta(String[][] palavras) {
         for (String[] palavra : palavras) {
             if (palavra[1] == null) {
                 palavra[1] = "Palavra NÃO encontrada";
