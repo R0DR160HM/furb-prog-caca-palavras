@@ -85,37 +85,44 @@ public class TrabalhoFinal {
                                     palavras[i][1] = "[" + linha + "," + coluna + "]";
                                 }
                             }
-                            for (int marcador = 0; marcador < palavra.length(); marcador++) {
-                                int movimento = linha + marcador;
-                                if (movimento >= mapa.length) {
-                                    break;
-                                } else if (palavra.charAt(marcador) != mapa[movimento][coluna]) {
-                                    break;
+                            if (palavras[i][1] == null) {
+                                for (int marcador = 0; marcador < palavra.length(); marcador++) {
+                                    int movimento = linha + marcador;
+                                    if (movimento >= mapa.length) {
+                                        break;
+                                    } else if (palavra.charAt(marcador) != mapa[movimento][coluna]) {
+                                        break;
+                                    }
+                                    if (marcador == palavra.length() - 1) {
+                                        palavras[i][1] = "[" + linha + "," + coluna + "]";
+                                    }
                                 }
-                                if (marcador == palavra.length() - 1) {
-                                    palavras[i][1] = "[" + linha + "," + coluna + "]";
-                                }
-                            }
-                            for (int marcador = 0; marcador < palavra.length(); marcador++) {
-                                int movimento = linha - marcador;
-                                if (movimento < 0) {
-                                    break;
-                                } else if (palavra.charAt(marcador) != mapa[movimento][coluna]) {
-                                    break;
-                                }
-                                if (marcador == palavra.length() - 1) {
-                                    palavras[i][1] = "[" + linha + "," + coluna + "]";
-                                }
-                            }
-                            for (int marcador = 0; marcador < palavra.length(); marcador++) {
-                                int movimento = coluna + marcador;
-                                if (movimento >= mapa[0].length) {
-                                    break;
-                                } else if (palavra.charAt(marcador) != mapa[linha][movimento]) {
-                                    break;
-                                }
-                                if (marcador == palavra.length() - 1) {
-                                    palavras[i][1] = "[" + linha + "," + coluna + "]";
+                                if (palavras[i][1] == null) {
+                                    for (int marcador = 0; marcador < palavra.length(); marcador++) {
+                                        int movimento = linha - marcador;
+                                        if (movimento < 0) {
+                                            break;
+                                        } else if (palavra.charAt(marcador) != mapa[movimento][coluna]) {
+                                            break;
+                                        }
+                                        if (marcador == palavra.length() - 1) {
+                                            palavras[i][1] = "[" + linha + "," + coluna + "]";
+                                        }
+                                    }
+                                    if (palavras[i][1] == null) {
+                                        for (int marcador = 0; marcador < palavra.length(); marcador++) {
+                                            int movimento = coluna + marcador;
+                                            if (movimento >= mapa[0].length) {
+                                                break;
+                                            } else if (palavra.charAt(marcador) != mapa[linha][movimento]) {
+                                                break;
+                                            }
+                                            if (marcador == palavra.length() - 1) {
+                                                palavras[i][1] = "[" + linha + "," + coluna + "]";
+                                            }
+                                        }
+                                    }
+
                                 }
                             }
                         }
