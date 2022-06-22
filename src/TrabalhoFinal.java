@@ -1,8 +1,8 @@
 import java.util.Scanner;
 
-public class CacaPalavras {
+public class TrabalhoFinal {
 
-    CacaPalavras() {
+    TrabalhoFinal() {
 
         Scanner s = new Scanner(System.in);
 
@@ -156,6 +156,6 @@ public class CacaPalavras {
     }
 
     public static void main(String[] args) throws Exception {
-        new CacaPalavras();
+        new TrabalhoFinal();
     }
 }
