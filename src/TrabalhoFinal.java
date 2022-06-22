@@ -68,12 +68,17 @@ public class TrabalhoFinal {
 
     public String[][] mapaPesquisa(String[][] palavras, char[][] mapa) {
 
+        // Percorre cada palavra
         for (int i = 0; i < palavras.length; i++) {
             String palavra = palavras[i][0];
+
+            // Percorre cada posição da matriz
             for (int linha = 0; linha < mapa.length; linha++) {
                 for (int coluna = 0; coluna < mapa[0].length; coluna++) {
 
+                        // Verifica se a posição atual é igual a primeira letra da palavra
                         if (palavra.charAt(0) == mapa[linha][coluna]) {
+                            // Verifica se a palavra está na horizontal de trás pra frente
                             for (int marcador = 0; marcador < palavra.length(); marcador++) {
                                 int movimento = coluna - marcador;
                                 if (movimento < 0) {
@@ -86,6 +91,7 @@ public class TrabalhoFinal {
                                 }
                             }
                             if (palavras[i][1] == null) {
+                                // Verifica se a palavra está na horizontal
                                 for (int marcador = 0; marcador < palavra.length(); marcador++) {
                                     int movimento = linha + marcador;
                                     if (movimento >= mapa.length) {
@@ -98,6 +104,7 @@ public class TrabalhoFinal {
                                     }
                                 }
                                 if (palavras[i][1] == null) {
+                                    // Verifica se a palavra está na vertical de trás para frente
                                     for (int marcador = 0; marcador < palavra.length(); marcador++) {
                                         int movimento = linha - marcador;
                                         if (movimento < 0) {
@@ -110,6 +117,7 @@ public class TrabalhoFinal {
                                         }
                                     }
                                     if (palavras[i][1] == null) {
+                                        // Verifica se a palavra está na vertical
                                         for (int marcador = 0; marcador < palavra.length(); marcador++) {
                                             int movimento = coluna + marcador;
                                             if (movimento >= mapa[0].length) {
